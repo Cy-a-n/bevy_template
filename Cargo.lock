@@ -1609,13 +1609,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "escaping_gravity"
-version = "0.1.0"
-dependencies = [
- "bevy",
-]
-
-[[package]]
 name = "euclid"
 version = "0.22.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2284,6 +2277,13 @@ dependencies = [
 [[package]]
 name = "macros"
 version = "0.1.0"
+
+[[package]]
+name = "main_crate"
+version = "0.1.0"
+dependencies = [
+ "bevy",
+]
 
 [[package]]
 name = "malloc_buf"
