@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["main_crate", "macros"]
+members = ["main_crate", "macros", "bevy_utils"]
 
 # Enable a small amount of optimization in debug mode
 [profile.dev]
