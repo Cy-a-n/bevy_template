@@ -1,9 +1,12 @@
 use bevy::{
     app::{Plugin, Startup},
-    ecs::schedule::States,
+    ecs::schedule::{OnEnter, OnExit, States},
 };
+use bevy_utils::cleanup::cleanup;
 
-use self::systems::setup;
+use self::{components::CleanupInGame, systems::setup};
+
+use super::GameStates;
 
 mod components;
 mod resources;
@@ -13,7 +16,8 @@ pub(super) struct InGamePlugin;
 
 impl Plugin for InGamePlugin {
     fn build(&self, app: &mut bevy::prelude::App) {
-        app.add_systems(Startup, setup)
+        app.add_systems(OnEnter(GameStates::InGame), setup)
+        .add_systems(OnExit(GameStates::InGame), cleanup::<CleanupInGame>)
             // .init_state::<InGameStates>()
             ;
     }

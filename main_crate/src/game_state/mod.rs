@@ -23,7 +23,7 @@ impl Plugin for GameStatesPlugin {
 
 #[derive(States, Debug, Clone, PartialEq, Eq, Hash, Default)]
 enum GameStates {
-    #[default]
     MainMenu,
+    #[default]
     InGame,
 }

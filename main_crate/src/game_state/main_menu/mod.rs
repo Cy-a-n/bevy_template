@@ -1,6 +1,12 @@
-use bevy::app::{Plugin, Startup};
+use bevy::{
+    app::{Plugin, Startup},
+    ecs::schedule::{OnEnter, OnExit},
+};
+use bevy_utils::cleanup::cleanup;
 
-use self::systems::setup;
+use self::{components::CleanupMainMenu, systems::setup};
+
+use super::GameStates;
 
 mod components;
 mod resources;
@@ -10,9 +16,10 @@ pub(super) struct MainMenuPlugin;
 
 impl Plugin for MainMenuPlugin {
     fn build(&self, app: &mut bevy::prelude::App) {
-        app.add_systems(Startup, setup)
-            // .init_state::<MainMenuStates>()
-            ;
+        app.add_systems(OnEnter(GameStates::MainMenu), setup)
+        .add_systems(OnExit(GameStates::MainMenu), cleanup::<CleanupMainMenu>)
+        // .init_state::<MainMenuStates>()
+        ;
     }
 }
 
