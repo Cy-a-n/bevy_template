@@ -2297,6 +2297,8 @@ name = "main_crate"
 version = "0.1.0"
 dependencies = [
  "bevy",
+ "bevy_utils 0.1.0",
+ "macros",
 ]
 
 [[package]]

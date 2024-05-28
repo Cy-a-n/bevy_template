@@ -5,3 +5,5 @@ edition = "2021"
 
 [dependencies]
 bevy = { version = "0.13.0", features = ["dynamic_linking"] }
+macros = { path = "../macros" }
+bevy_utils = { path = "../bevy_utils" }
