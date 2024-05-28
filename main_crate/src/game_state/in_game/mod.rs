@@ -9,9 +9,9 @@ mod components;
 mod resources;
 mod systems;
 
-pub(super) struct MyPlugin;
+pub(super) struct InGamePlugin;
 
-impl Plugin for MyPlugin {
+impl Plugin for InGamePlugin {
     fn build(&self, app: &mut bevy::prelude::App) {
         app.add_systems(Startup, setup)
             // .init_state::<InGameStates>()

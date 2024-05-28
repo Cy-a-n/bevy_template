@@ -3,7 +3,7 @@ use bevy::{
     ecs::schedule::States,
 };
 
-use self::systems::setup;
+use self::{in_game::InGamePlugin, main_menu::MainMenuPlugin, systems::setup};
 
 mod components;
 mod in_game;
@@ -15,7 +15,9 @@ pub(super) struct GameStatesPlugin;
 
 impl Plugin for GameStatesPlugin {
     fn build(&self, app: &mut bevy::prelude::App) {
-        app.add_systems(Startup, setup).init_state::<GameStates>();
+        app.add_plugins((MainMenuPlugin, InGamePlugin))
+            .add_systems(Startup, setup)
+            .init_state::<GameStates>();
     }
 }
 
