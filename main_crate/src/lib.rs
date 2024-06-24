@@ -11,7 +11,7 @@ mod main_menu;
 mod resources;
 mod systems;
 
-pub(super) struct GameStatesPlugin;
+pub struct GameStatesPlugin;
 
 impl Plugin for GameStatesPlugin {
     fn build(&self, app: &mut bevy::prelude::App) {

@@ -1,7 +1,5 @@
 use bevy::{app::App, DefaultPlugins};
-use game_state::GameStatesPlugin;
-
-mod game_state;
+use main_crate::GameStatesPlugin;
 
 fn main() {
     App::new()

@@ -1,6 +1,6 @@
 use bevy::{
-    app::{Plugin, Startup},
-    ecs::schedule::{OnEnter, OnExit, States},
+    app::Plugin,
+    ecs::schedule::{OnEnter, OnExit},
 };
 use bevy_utils::cleanup::cleanup;
 
